@@ -10,11 +10,8 @@ public interface ProductDao {
 	void delete(Product product);
 	
 	
-	Product get(int id);     //get isimli bir operasyon olsun. ürün arayabilmek için. Bana bir id ver veritabanýnda bir ürün bulup getireyim
+	Product get(int id);     
 	
-	List<Product> getAll();     //örn, bir markayý arattýðýnda tüm ürünlerinin gelmesi
-	                       
-	
+	List<Product> getAll();     
+	  
 }
-//ProductDao : Product için veri eriþim interfacemiz olucak
-//list arrayList'in base' i'. List yerine ArrayList de yazýlabilir. Dolayýsýyla arrayListi de tutuyor onu implemente eden baþka nesneleri de

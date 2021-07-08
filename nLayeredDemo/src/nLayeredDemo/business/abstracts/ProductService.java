@@ -6,7 +6,7 @@ import nLayeredDemo.entities.concretes.Product;
 
 public interface ProductService {   
 
-	void add(Product product);  //Neyi servis etmek istiyorsak o operasyonlarýmýz olsun
+	void add(Product product);  
 	
 	List<Product> getAll();
 }

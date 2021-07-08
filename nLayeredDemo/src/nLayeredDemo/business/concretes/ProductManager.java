@@ -12,7 +12,7 @@ public class ProductManager implements ProductService {
 	private ProductDao productDao;
 	private LoggerService loggerService;
 
-	public ProductManager(ProductDao productDao,LoggerService loggerService) { // Daoyu constructor ile injecte ettik
+	public ProductManager(ProductDao productDao,LoggerService loggerService) { 
 		super();
 		this.productDao = productDao;
 		this.loggerService = loggerService;
@@ -24,14 +24,12 @@ public class ProductManager implements ProductService {
 
 		if (product.getCategoryId() == 1) {
 			System.out.println("Bu kategoride ürün kabul edilmiyor");
-			return;                                                            // ben bunun veriye eriþimine gitmesini istemiyorum, dön demek
-		}                                                                      // Metot boþ return'ü gördüðü zaman aþaðý bakmaz bitirir.
+			return;                                                         
+		}                                                                      
+		this.productDao.add(product);                                        
+		this.loggerService.logToSystem("Ürün eklendi : " +product.getName());		               
 
-		this.productDao.add(product);                                         // if'e girmezse kurallardan geçti demek, dolayýsýyla benim veri eriþimini
-		this.loggerService.logToSystem("Ürün eklendi : " +product.getName());		                 // çaðýrmam gerek
-
-		// HibernateProductDao dao = new HibernateProductDao();
-		// dao.add(product);                                              Bunu yaparsam baðýmlý olurum bunun yerine Dependes injection yaparým
+		                                        
 		                                             
 
 	}
